@@ -2,7 +2,7 @@ package net.plate.littlethings;
 
 import net.fabricmc.api.ClientModInitializer;
 
-public class LittlethingsClient implements ClientModInitializer {
+public class LittleThingsClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {

@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.plate.littlethings.Littlethings"
+			"net.plate.littlethings.LittleThings"
 		],
 		"fabric-datagen": [
-			"net.plate.littlethings.LittlethingsDataGenerator"
+			"net.plate.littlethings.LittleThingsDataGenerator"
 		]
 	},
 	"mixins": [
