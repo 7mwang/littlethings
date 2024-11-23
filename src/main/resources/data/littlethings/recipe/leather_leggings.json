@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:leather_leggings" ,
+    "littlethings:crimson_dye"
+  ],
+  "result": {
+    "id": "minecraft:leather_leggings",
+    "components": {
+      "minecraft:lore": [
+        "{\"text\":\"Crimson Dyed\", \"color\":\"red\"}"
+      ]
+    }
+  }
+}

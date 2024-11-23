@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:leather_helmet" ,
+    "littlethings:crimson_dye"
+  ],
+  "result": {
+    "id": "minecraft:leather_helmet",
+    "components": {
+      "minecraft:lore": [
+        "{\"text\":\"Crimson Dyed\", \"color\":\"red\"}"
+      ]
+    }
+  }
+}
