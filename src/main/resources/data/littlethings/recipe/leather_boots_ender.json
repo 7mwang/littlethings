@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:leather_boots" ,
+    "littlethings:ender_dye"
+  ],
+  "result": {
+    "id": "minecraft:leather_boots",
+    "components": {
+      "minecraft:lore": [
+        "{\"text\":\"Ender Dyed\", \"color\":\"dark_aqua\"}"
+      ]
+    }
+  }
+}

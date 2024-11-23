@@ -22,17 +22,19 @@ public class LittleThings implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		Dye CRIMSON = new Dye(75,0,0,229,0,52);
+		Dye CRIMSON = new Dye("Crimson", 75,0,0,229,0,52);
+		Dye ENDER = new Dye("Ender",3,38,32,0,135,130);
 		ModItems.registerModItems();
 
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			tickCounter++;
 			if (tickCounter >= TICK_INTERVAL) {
 				tickCounter = 0;
-				colorIndex = (colorIndex + 1) % 15;
+				colorIndex = (colorIndex + 1) % 31;
 
 				for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
 					checkAndUpdateArmor(player, CRIMSON);
+					checkAndUpdateArmor(player, ENDER);
 					//System.out.println("checked");
 				}
 			}

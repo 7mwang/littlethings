@@ -15,6 +15,7 @@ import java.util.function.Function;
 
 public class ModItems {
     public static final Item CRIMSON_DYE = registerItem("crimson_dye", CrimsonDyeItem::new, new Item.Settings());
+    public static final Item ENDER_DYE = registerItem("ender_dye", CrimsonDyeItem::new, new Item.Settings());
 
     public static Item registerItem(String path, Function<Item.Settings, Item> factory, Item.Settings settings) {
         final RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("littlethings", path));
@@ -25,6 +26,7 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(CRIMSON_DYE);
+            entries.add(ENDER_DYE);
         });
     }
 }

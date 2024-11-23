@@ -15,10 +15,12 @@ public class GradientDye {
         return r*65536+g*256+b;
     }
     static class Dye {
+        String dyeName;
         int sR, sG, sB, eR, eG, eB;
-        int[] COLORS = new int[31];
-        public Dye(int sR, int sG, int sB, int eR, int eG, int eB) {
+        int[] COLORS = new int[32];
+        public Dye(String dyeName, int sR, int sG, int sB, int eR, int eG, int eB) {
             this.COLORS = COLORS; // Fix array size to match 16 steps
+            this.dyeName = dyeName;
             this.sR = sR;
             this.sG = sG;
             this.sB = sB;
@@ -43,23 +45,23 @@ public class GradientDye {
                 sG += diffG;
                 sB += diffB;
             }
-            for (int i = 0; i <= 16; i++) {
-                COLORS[COLORS.length-i] = COLORS[i];
+            for (int i = 0; i < 16; i++) {
+                COLORS[COLORS.length-1-i] = COLORS[i];
             }
             System.out.println(Arrays.toString(COLORS));
     }
         public static void checkAndUpdateArmor(ServerPlayerEntity player, Dye dye) {
             for (ItemStack armorPiece : player.getArmorItems()) {
-                if (isDyedArmor(armorPiece)) {
+                if (isDyedArmor(armorPiece, dye)) {
                     updateArmorColor(armorPiece, dye);
                 }
             }
         }
     }
-    public static boolean isDyedArmor(ItemStack stack) {
+    public static boolean isDyedArmor(ItemStack stack, Dye dye) {
         if (stack.isEmpty()) return false;
         String displayName = stack.get(DataComponentTypes.LORE).toString();
-        return displayName.contains("Dyed");
+        return displayName.contains(dye.dyeName);
     }
     public static void updateArmorColor(ItemStack stack, Dye customDye) {
         if (stack.isEmpty()) return;
